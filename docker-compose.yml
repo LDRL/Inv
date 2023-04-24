@@ -1,0 +1,49 @@
+version: "3.5"
+services:
+  app:
+    build: ./fronted
+    container_name: fronted
+    restart: unless-stopped
+    ports:
+      - 5173:5173
+    volumes:
+      - ./fronted:/app_fronted
+    working_dir: /app_fronted
+    command: npm run dev
+    stdin_open: true
+    tty: true
+  client:
+    build: ./backend
+    command: npm run dev
+    container_name: backend
+    ports:
+      - 3000:3000
+    volumes:
+      - ./backend:/backend
+      - /backend/node_modules
+    stdin_open: true
+    tty: true
+  mongo:
+    container_name: mongo
+    image: mongo
+    restart: unless-stopped
+    env_file: ./.env
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=$MONGODB_USER
+      - MONGO_INITDB_ROOT_PASSWORD=$MONGODB_PASSWORD
+    volumes:
+      - db:/data/db
+    ports:
+      - $MONGODB_LOCAL_PORT:$MONGODB_DOCKER_PORT
+  adminer:
+    image: dehy/adminer
+    container_name: adminer
+    restart: unless-stopped
+    env_file: ./.env
+    depends_on:
+      - mongo
+    ports:
+      - "8080:80"
+
+volumes:
+  db:
