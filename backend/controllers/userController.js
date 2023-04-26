@@ -1,6 +1,7 @@
 import User from "../models/User.js";
 import generarId from "../helpers/generarId.js";
 import generarJWT from "../helpers/generarJWT.js";
+import { registerEmail, forgetPasswordEmail } from "../helpers/email.js";
 
 const users = (req, res) => {
     res.send("Desde api/usuarios");
@@ -19,8 +20,15 @@ const createdUser = async (req, res) => {
     try {
         const user = new User(req.body);
         user.token = generarId();
-        const userAlmacenado = await user.save();
-        res.json(userAlmacenado);
+        await user.save();
+        //Enviar el email de confirmacion
+        registerEmail({
+            email: user.email,
+            name: user.name,
+            token: user.token
+        })
+
+        res.json({msg:'Usuario creado correctamente, Revisa tu Email para confirmar la cuenta'});
 
     } catch (error) {
         console.log(error);
@@ -90,6 +98,13 @@ const forgetPassword = async (req, res) => {
     try {
         user.token = generarId();
         await user.save();
+
+        forgetPasswordEmail({
+            email: user.email,
+            name: user.name,
+            token: user.token
+        })
+
         res.json({ msg: "Hemos enviado un email" });
     } catch (error) {
         console.log(user);

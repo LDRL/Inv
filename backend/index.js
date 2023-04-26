@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from "dotenv";
+import cors from 'cors';
 import conectarDB from './config/db.js';
 import userRoutes from "./routes/userRoutes.js"
 
@@ -11,10 +12,27 @@ dotenv.config();
 
 conectarDB();
 
+//configurar cors
+
+const whitelist = [process.env.FRONTEND_URL];
+console.log(whitelist)
 const PORT = process.env.PORT || 3000;
 
+const corsOptions = {
+    origin: function (origin, callback) {
+        console.log(origin);
+        if (whitelist.includes(origin)) {
+            //puede consultar
+            callback(null, true);
+        } else {
+            callback(new Error("Error de Cors"));
+        }
+    }
+}
+
+app.use(cors(corsOptions));
+
 //Routing
-console.log("mensaje");
 
 app.use("/api/usuarios", userRoutes);
 
@@ -22,6 +40,6 @@ app.use("/api/usuarios", userRoutes);
 //req = datos enviados
 //res = respuesta de la peticion
 
-app.listen(PORT,host);
+app.listen(PORT, host);
 
 console.log(`Example app listening at http://localhost:${PORT}`);
