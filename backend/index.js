@@ -15,7 +15,7 @@ conectarDB();
 //configurar cors
 
 const whitelist = [process.env.FRONTEND_URL];
-console.log(whitelist)
+console.log("Este es un mensaje interno"+whitelist)
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
