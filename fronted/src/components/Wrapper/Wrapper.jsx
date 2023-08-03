@@ -40,8 +40,7 @@ const Wrapper = ({
 
                         <li>
                             <a href="#">
-                                <FaIcons.FaOutdent />
-                                Cerrar Sesion
+                                <FaIcons.FaOutdent /> Cerrar Sesion
                             </a>
                         </li>
 

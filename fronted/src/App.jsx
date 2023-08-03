@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthLayout from './layouts/AuthLayout'
 import ProtectedRoute from './layouts/ProtectedRoute'
 
-import Login from './pages/Login'
+import Login from './pages/login/Login'
 import Registrar from './pages/Registrar'
 import ForgetPassword from './pages/ForgetPassword'
 import NewPassword from './pages/NewPassword'
