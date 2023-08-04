@@ -30,25 +30,6 @@ const ProtectedRoute = () => {
                         <Sidebar 
                             menuCollapse={menuCollapse}
                         />
-                        {/* className="p-10 flex-1 bg-red-100" */}
-
-
-                        <main>
-                            <h1>hola</h1>
-                            <Outlet />
-                        </main>
-
-                        {/* <div className="bg-gray-100">
-                            <Header />
-
-                            <div className="md:flex md:min-h-screen">
-                                <Sidebar />
-
-                                <main className="p-10 flex-1 bg-red-100">
-                                    <Outlet />
-                                </main>
-                            </div>
-                        </div> */}
                     </div>
 
                 ) : <Navigate to="/" />}

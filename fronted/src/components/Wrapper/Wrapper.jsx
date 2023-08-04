@@ -1,6 +1,7 @@
 import styles from "./Wrapper.module.css";
 import classNames from "classnames";
 import * as FaIcons from "react-icons/fa";
+import { Outlet } from "react-router-dom";
 
 const Wrapper = ({
     menuIconClick,
@@ -39,8 +40,11 @@ const Wrapper = ({
                         </li>
 
                         <li>
-                            <a href="#">
-                                <FaIcons.FaOutdent /> Cerrar Sesion
+                            <a href="#" style={{ color: "white" }}>
+                                <FaIcons.FaOutdent />
+                                <i style={{ marginLeft: "10px" }}>
+                                    Cerrar Sesion
+                                </i>
                             </a>
                         </li>
 
@@ -48,10 +52,9 @@ const Wrapper = ({
                 </nav>
             </div>
 
-            {/* <div className={classNames(styles["wrapper"], styles["wrapper-content"])}>
-
-                Contenido prueba
-            </div> */}
+            <div className={classNames(styles["wrapper"], `${menuCollapse ? styles["wrapper-content"] : styles["wrapper-content-min"]}`)} >
+                <Outlet />
+            </div>
         </div>
     )
 }

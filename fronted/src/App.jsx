@@ -14,6 +14,7 @@ import NewProduct from './pages/NewProduct'
 import Home from "./pages/home/Home";
 
 import { AuthProvider } from './context/AuthProvider'
+import Product from "./pages/product/Product";
 function App() {
 
   return (
@@ -32,7 +33,17 @@ function App() {
             <Route index element ={<Home />} /> 
           </Route>
 
-          <Route path='/proyectos' element={<ProtectedRoute />}>
+          <Route path='/productos' element={<ProtectedRoute />}>
+            <Route index element ={<Product />} /> 
+            <Route path='crear-producto' element={<NewProduct />} />
+          </Route>
+
+          <Route path='/proveedores' element={<ProtectedRoute />}>
+            <Route index element ={<Proyects />} /> 
+            <Route path='crear-producto' element={<NewProduct />} />
+          </Route>
+
+          <Route path='/clientes' element={<ProtectedRoute />}>
             <Route index element ={<Proyects />} /> 
             <Route path='crear-producto' element={<NewProduct />} />
           </Route>

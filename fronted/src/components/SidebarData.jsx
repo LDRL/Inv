@@ -6,8 +6,8 @@ import * as RiIcons from "react-icons/ri";
 
 export const SidebarData = [
     {
-        title: "About Us",
-        path: "/proyectos",
+        title: "Productos",
+        path: "/productos",
         icon: <AiIcons.AiFillHome />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -15,17 +15,17 @@ export const SidebarData = [
         subNav: [
             {
                 title: "Our Aim",
-                path: "/proyectos",
+                path: "/productos",
                 icon: <IoIcons.IoIosPaper />,
             },
             {
                 title: "Our Visionnn",
-                path: "/about-us/vision",
+                path: "/proveedores",
                 icon: <IoIcons.IoIosPaper />,
             },
             {
                 title: "Our Me",
-                path: "/about-us/vision",
+                path: "/clientes",
                 icon: <IoIcons.IoIosPaper />,
             },
             {
@@ -36,16 +36,16 @@ export const SidebarData = [
         ],
     },
     {
-        title: "Services",
-        path: "/services",
+        title: "Proveedores",
+        path: "/proveedores",
         icon: <IoIcons.IoIosPaper />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
 
         subNav: [
             {
-                title: "Service 1",
-                path: "/services/services1",
+                title: "Clientes",
+                path: "/clientes",
                 icon: <IoIcons.IoIosPaper />,
                 cName: "sub-nav",
             },
@@ -63,8 +63,8 @@ export const SidebarData = [
         ],
     },
     {
-        title: "Contact",
-        path: "/contact",
+        title: "Clientes",
+        path: "/clientes",
         icon: <FaIcons.FaPhone />,
     },
     {
