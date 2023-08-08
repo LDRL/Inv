@@ -7,38 +7,56 @@ import * as RiIcons from "react-icons/ri";
 export const SidebarData = [
     {
         title: "Productos",
-        path: "/productos",
+        path: "",
         icon: <AiIcons.AiFillHome />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
 
         subNav: [
             {
-                title: "Our Aim",
+                title: "Productos",
                 path: "/productos",
                 icon: <IoIcons.IoIosPaper />,
             },
             {
-                title: "Our Visionnn",
-                path: "/proveedores",
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: "Our Me",
-                path: "/clientes",
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: "Our TEs",
-                path: "/about-us/vision",
+                title: "nuevo producto",
+                path: "/productos/crear-producto",
                 icon: <IoIcons.IoIosPaper />,
             },
         ],
     },
     {
         title: "Proveedores",
-        path: "/proveedores",
+        path: "",
         icon: <IoIcons.IoIosPaper />,
+        iconClosed: <RiIcons.RiArrowDownSFill />,
+        iconOpened: <RiIcons.RiArrowUpSFill />,
+
+        subNav: [
+            {
+                title: "Proveedores",
+                path: "/proveedores",
+                icon: <IoIcons.IoIosPaper />,
+                cName: "sub-nav",
+            },
+            {
+                title: "nuevo proveedor",
+                path: "/proveedores/nuevo-proveedor",
+                icon: <IoIcons.IoIosPaper />,
+                cName: "sub-nav",
+            }
+        ],
+    },
+    // {
+    //     title: "Clientes",
+    //     path: "",
+    //     icon: <FaIcons.FaPhone />,
+    // },
+    {
+        title: "Clientes",
+        path: "",
+        icon: <FaIcons.FaEnvelopeOpenText />,
+
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -47,43 +65,10 @@ export const SidebarData = [
                 title: "Clientes",
                 path: "/clientes",
                 icon: <IoIcons.IoIosPaper />,
-                cName: "sub-nav",
             },
             {
-                title: "Service 2",
-                path: "/services/services2",
-                icon: <IoIcons.IoIosPaper />,
-                cName: "sub-nav",
-            },
-            {
-                title: "Service 3",
-                path: "/services/services3",
-                icon: <IoIcons.IoIosPaper />,
-            },
-        ],
-    },
-    {
-        title: "Clientes",
-        path: "/clientes",
-        icon: <FaIcons.FaPhone />,
-    },
-    {
-        title: "Events",
-        path: "/events",
-        icon: <FaIcons.FaEnvelopeOpenText />,
-
-        iconClosed: <RiIcons.RiArrowDownSFill />,
-        iconOpened: <RiIcons.RiArrowUpSFill />,
-
-        subNav: [
-            {
-                title: "Event 1",
-                path: "/events/events1",
-                icon: <IoIcons.IoIosPaper />,
-            },
-            {
-                title: "Event 2",
-                path: "/events/events2",
+                title: "nuevo cliente",
+                path: "/clientes/nuevo-cliente",
                 icon: <IoIcons.IoIosPaper />,
             },
         ],

@@ -96,11 +96,11 @@
 .wrapper-content-min {
 	margin: 20px;
 	transition: all 0.5s ease;
-	width: calc(100% - 70px);
+	/* width: calc(100% - 70px); */
 }
 
 .wrapper-content {
 	margin: 20px;
 	transition: all 0.5s ease;
-	width: calc(100% - 250px);
+	/* width: calc(100% - 250px); */
 }

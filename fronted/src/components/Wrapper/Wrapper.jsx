@@ -2,11 +2,19 @@ import styles from "./Wrapper.module.css";
 import classNames from "classnames";
 import * as FaIcons from "react-icons/fa";
 import { Outlet } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Wrapper = ({
     menuIconClick,
     menuCollapse
 }) => {
+
+    const {logout} = useAuth();
+
+    const handleLogout = () => {
+        logout()
+        localStorage.removeItem('token')
+    }
     return (
         <div id="page-wrapper" className={classNames(styles["gray-bg"], `${menuCollapse ? styles["dashbard"] : styles["dashbard-min"]}`)}>
             <div className={classNames(styles["row"], styles["border-bottom"])}>
@@ -40,7 +48,7 @@ const Wrapper = ({
                         </li>
 
                         <li>
-                            <a href="#" style={{ color: "white" }}>
+                            <a style={{ color: "white" }} onClick={handleLogout}>
                                 <FaIcons.FaOutdent />
                                 <i style={{ marginLeft: "10px" }}>
                                     Cerrar Sesion

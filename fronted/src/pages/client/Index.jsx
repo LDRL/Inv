@@ -1,11 +1,7 @@
-import { Link } from 'react-router-dom'
-const Product = () => {
-    return (
-        <div>
-
-            {/* <Link to="crear-producto">Crear Producto</Link> */}
-
-            <table>
+const Client = () => {
+  return (
+    <div>
+         <table>
                 <thead>
                     <tr>
                         <th>id</th>
@@ -16,9 +12,8 @@ const Product = () => {
                 </thead>
 
             </table>
-
-        </div>
-    )
+    </div>
+  )
 }
 
-export default Product
+export default Client
